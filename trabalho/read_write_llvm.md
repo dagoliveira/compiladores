@@ -40,7 +40,7 @@ declare i32 @__isoc99_scanf(ptr noundef, ...)
 @write_float = private unnamed_addr constant [4 x i8] c"%f\0A\00", align 1
 
 
-define dso_local noundef i32 @main() local_unnamed_addr #0 {
+define dso_local i32 @main() local_unnamed_addr #0 {
   %1 = alloca i32
   %2 = call i32 (ptr, ...) @__isoc99_scanf(ptr @read_int, ptr %1)
   %3 = load i32, ptr %1
@@ -78,18 +78,17 @@ declare i32 @__isoc99_scanf(ptr noundef, ...)
 @write_float = private unnamed_addr constant [4 x i8] c"%f\0A\00", align 1
 
 
-; Function Attrs: noinline nounwind optnone uwtable
 define dso_local i32 @main() #0 {
   %1 = alloca i32, align 4
   %2 = alloca float, align 4
   store i32 0, ptr %1, align 4
-  %3 = call i32 (ptr, ...) @__isoc99_scanf(ptr noundef @read_float, ptr noundef %2)
+  %3 = call i32 (ptr, ...) @__isoc99_scanf(ptr  @read_float, ptr  %2)
   %4 = load float, ptr %2, align 4
   %5 = fadd float %4, 1.000000e+00
   store float %5, ptr %2, align 4
   %6 = load float, ptr %2, align 4
   %7 = fpext float %6 to double
-  %8 = call i32 (ptr, ...) @printf(ptr noundef @write_float, double noundef %7)
+  %8 = call i32 (ptr, ...) @printf(ptr  @write_float, double  %7)
   ret i32 0
 }
 ```
