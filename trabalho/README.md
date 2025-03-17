@@ -13,6 +13,12 @@ Outro ponto é que não existe uma distinção sintática entre uma variável si
 
 Alguns exemplos de código podem ser vistos [aqui](./exemplos_pascal).
 
+## Ferramentas
+
+O compilador deve, obrigatoriamente, usar as ferramentas [Flex](https://ftp.gnu.org/old-gnu/Manuals/flex-2.5.4/) e [Bison](https://www.gnu.org/software/bison/manual/html_node/). 
+
+Não utilize bibliotecas extras, além das bibliotecas padrões de C, como Boost, pois podem complicar a compilação e validação pelo professor. Qualquer estrutura de dados, como a utilizada para tabela de símbolos, pode ser facilmente implementada pelo aluno (listas ligadas, tabelas hash e etc.).
+
 ## Gramática
 
 A seguinte gramática já está apropriada para o Bison:
