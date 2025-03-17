@@ -29,7 +29,7 @@ int main(){
 }
 ```
 
-Em LLVM, poderíamos traduzí-lo da seguinte forma:
+Em LLVM, poderíamos traduzi-lo da seguinte forma:
 
 ```
 declare i32 @printf(ptr noundef, ...)

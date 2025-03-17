@@ -5,9 +5,9 @@ Utilize a versão 15 ou superior do LLVM, onde [*Opaque Pointer*](https://llvm.o
 
 Recursão e passagem por referência são permitidas. As funções `read` e `write` devem ser providas pelo compilador, e podem ser substituídas por uma chamada ao scanf e printf. Não é necessário ler e imprimir caracteres na tela, trabalhe apenas com números inteiros e de ponto flutuante. Mais detalhes em como usar/chamar essas funções pode ser obtido [aqui](./read_write_llvm.md).
 
-A gramática não permite a construção com apenas IF-THEN, impedindo o problema de *dangling else*. Portanto, toda construção de condicional deve conter tando os enunciados do THEN como do ELSE.
+A gramática não permite a construção com apenas IF-THEN, impedindo o problema de *dangling else*. Portanto, toda construção de condicional deve conter tanto os enunciados do THEN como do ELSE.
 
-Outro ponto é que não existe uma distinção sintática entre uma variável simples e uma chamada de função sem parâmentos. Ambos são gerados pela produção `FATOR: ID`.
+Outro ponto é que não existe uma distinção sintática entre uma variável simples e uma chamada de função sem parâmetros. Ambos são gerados pela produção `FATOR: ID`.
 
 ## Exemplos de código
 
