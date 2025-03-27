@@ -14,4 +14,11 @@ O [segundo exemplo de calculadora](./calculadora_ast) é um pouco mais sofistica
 
 ## Notação Pós fixa
 
-O [exemplo final](./posfixa_ast) modifica o exemplo da calculadora com árvore sintática para transformar a expressão da notação infixa para pós fixa. O algoritmo apenas percorre, e imprime os nós, da árvore de forma pós fixa.
+O [exemplo de notação pós fixa](./posfixa_ast) modifica o exemplo da calculadora com árvore sintática para transformar a expressão da notação infixa para pós fixa. O algoritmo apenas percorre, e imprime os nós, da árvore de forma pós fixa.
+
+## Tabela de Símbolos (Nano C)
+
+Uma gramática extremamente simples, que lembra C, foi implementada neste [exemplo](./nanoC_tabela_simbolos). Nesse código, uma tabela de símbolos, de forma simplória, é criada para demonstrar a mecânica do Bison.
+
+A tabela de símbolos usa uma lista ligada simples, onde a inserção é sempre no inicio da lista. Dessa forma, ela se comporta como uma pilha, e os últimos símbolos inseridos serão acessados primeiro ao percorrer a lista.
+
