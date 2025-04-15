@@ -134,6 +134,7 @@ SINAL: MAIS
 |ABRE\_PARENTESES | ( |
 | FECHA\_PARENTESES | ) |
 | PONTO\_VIRGULA | ; |
+| VIRGULA | , |
 | DOIS\_PONTOS| : |
 | BEGIN\_TOKEN | begin |
 | END | end |
