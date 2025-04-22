@@ -1,4 +1,4 @@
-program teste_if (input,output);
+program ifSimples (input,output);
 var
    a,b: integer;
 begin
