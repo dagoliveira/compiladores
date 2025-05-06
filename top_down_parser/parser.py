@@ -10,11 +10,13 @@ import sys, re
 
 entrada = []
 
+# Informa o erro ao usuario e termina o programa
 def erro(msg):
     print("ERRO sintatico: "+msg)
     print("entrada ainda nao avaliada: ",entrada)
     sys.exit(-1)
 
+# Verifica qual o proximo token na entrada, o lookahead token
 def lookahead():
     if len(entrada) == 0:
         return "EOL"
@@ -33,6 +35,8 @@ def lookahead():
         return "ID"
     return None
 
+# Verifica se o lookahead token eh o token esperado, removendo ele da entrada (consumindo)
+# Caso nao seja o esperado, acusa um erro
 def match(esperado):
     token = lookahead()
     if token == esperado:
