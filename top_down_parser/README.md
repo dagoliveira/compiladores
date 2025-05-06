@@ -24,7 +24,7 @@ F: ( E )
  ;
 ```
 
-Os símbolos terminais são: **(**, **)**, **ID** e **NUM**
+Os símbolos terminais (tokens) são quatros: **(**, **)**, **ID** e **NUM**; Contúdo, foi acrescentado o **EOL** como fim de linha, no lugar do fim de arquivo, representado o final da entrada.
 
 NUM pode ser apenas dígitos inteiros e sem sinal, a expressão regular é a seguinte: `[0-9]+`
 
