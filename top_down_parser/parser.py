@@ -1,0 +1,100 @@
+# Este compilador implementa a seguinte gramatica, onde 'vazio' seria a cadeia vazia:
+# S ::= E $
+# E ::= T E_linha
+# E_lina ::= + T E+linha | 'vazio'
+# T ::= F T_linha
+# T_linha ::= * F T_linha | 'vazio'
+# F ::= ( E ) | ID | NUM
+
+import sys, re
+
+entrada = []
+
+def erro(msg):
+    print("ERRO sintatico: "+msg)
+    print("entrada ainda nao avaliada: ",entrada)
+    sys.exit(-1)
+
+def lookahead():
+    if len(entrada) == 0:
+        return "EOL"
+    lexema = entrada[0]
+    if re.match("[0-9]+",lexema):
+        return "NUM"
+    if re.match("\+",lexema):
+        return "MAIS"
+    if re.match("\*",lexema):
+        return "MULTIPLICA"
+    if re.match("\(",lexema):
+        return "ABRE_PARENTESES"
+    if re.match("\)",lexema):
+        return "FECHA_PARENTESES"
+    if re.match("[a-zA-Z][a-zA-Z_0-9]*",lexema):
+        return "ID"
+    return None
+
+def match(esperado):
+    token = lookahead()
+    if token == esperado:
+        entrada.pop(0)
+    else:
+        erro("esperava '"+esperado+"', mas foi encontrado um '"+token+"'")
+        sys.exit(-1)
+
+def S():
+    E()
+    if lookahead() != "EOL":
+        erro("esperava o final da entrada")
+        sys.exit(-1)
+
+def E():
+    T()
+    E_linha()
+
+def T():
+    F()
+    T_linha()
+
+def E_linha():
+    if lookahead() == "MAIS":
+        match("MAIS")
+        T()
+        E_linha()
+    else:
+        return # vazio
+
+def T_linha():
+    if lookahead() == "MULTIPLICA":
+        match("MULTIPLICA")
+        F()
+        T_linha()
+    else:
+        return # vazio
+
+def F():
+    token = lookahead()
+    if token == "ABRE_PARENTESES":
+        match("ABRE_PARENTESES")
+        E()
+        match("FECHA_PARENTESES")
+    elif token == "ID":
+        match("ID")
+    elif token == "NUM":
+        match("NUM")
+    else:
+        erro("esperava um '(', 'ID' ou 'NUM', mas foi encontrado '"+token+"'")
+        sys.exit(-1)
+
+def parse():
+    S() # simbolo nao-terminal inicial
+
+def main() -> int:
+    sentenca = input("entre com uma sentenca: ")
+    global entrada
+    entrada = sentenca.split()
+    parse()
+    print("Sentenca aceita, tudo ok!")
+    return 0
+
+if __name__ == '__main__':
+    sys.exit(main())
