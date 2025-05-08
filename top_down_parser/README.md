@@ -3,7 +3,8 @@
 O [parser.py](./parser.py) (analisador sintático), escrito em Python, implementa uma gramática de expressões bem simples:
 
 ```
-S: E EOL
+S: E EOL 
+ | EOL
  ;
 
 E: T E_linha
@@ -34,6 +35,12 @@ ID, que representa um identificador (como o nome de uma variável), deve iniciar
 
 O parser analisa apenas uma linha de entrada, informando se é uma sentença válida ou não (erro sintático). Depois, ele encerra o programa.
 
+## Analisador léxico
+
+Como a parte do analisador léxico, implementado ao fazer um `split` na entrada e expressões regulares na função `lookahead`, é extremamente simples. Cada token deve ter um espaço entre o outro. 
+
+Logo, expressões como `5*(2+3)` não são válidas. O analisador léxico exige que a expressão seja entrada da seguinte forma: `5 * ( 2 + 3 )`
+
 ## Exercício
 
 Modifique o parser como segue:
@@ -55,3 +62,9 @@ Uma sugestão de sintaxe é iniciar a atribuição com uma palavra-chave, como `
 ### Implemente a calculadora
 
 Modifique o parser para que o resultado da expressão seja calculado e impresso na tela, após analisar a linha entrada. Uma sugestão é alterar a main para que o parser seja chamado várias vezes, sendo possível entrar com várias linhas durante a execução do programa.
+
+Uma possível forma de implementar essa calculadora seria por meio da construção da árvore, que deve ser avaliada. Algo semelhante ao que foi feito em [Flex/Bison](../flex_bison/calculadora_ast). Porém, é possível resolver sem a construção de uma árvore sintática, mas pensando na notação pós-fixa.
+
+### Solução
+
+Uma possível solução está implementada [aqui](./solucao/parser.py). Tente resolver o exercício antes de olhar uma solução pronta!!!

@@ -1,7 +1,7 @@
 # Este compilador implementa a seguinte gramatica, onde 'vazio' seria a cadeia vazia:
-# S ::= E $
+# S ::= E $ | $
 # E ::= T E_linha
-# E_lina ::= + T E+linha | 'vazio'
+# E_linha ::= + T E_linha | 'vazio'
 # T ::= F T_linha
 # T_linha ::= * F T_linha | 'vazio'
 # F ::= ( E ) | ID | NUM
@@ -12,7 +12,7 @@ entrada = []
 
 # Informa o erro ao usuario e termina o programa
 def erro(msg):
-    print("ERRO sintatico: "+msg)
+    print("ERRO: "+msg)
     print("entrada ainda nao avaliada: ",entrada)
     sys.exit(-1)
 
@@ -40,16 +40,18 @@ def lookahead():
 def match(esperado):
     token = lookahead()
     if token == esperado:
-        entrada.pop(0)
+        if token != "EOL":
+            entrada.pop(0)
     else:
-        erro("esperava '"+esperado+"', mas foi encontrado um '"+token+"'")
-        sys.exit(-1)
+        erro("esperava '"+esperado+"', mas foi encontrado um '"+str(token)+"'")
 
 def S():
-    E()
-    if lookahead() != "EOL":
-        erro("esperava o final da entrada")
-        sys.exit(-1)
+    token = lookahead()
+    if token == "EOL":
+        print("linha vazia")
+    else:
+        E()
+        match("EOL")
 
 def E():
     T()
@@ -87,7 +89,6 @@ def F():
         match("NUM")
     else:
         erro("esperava um '(', 'ID' ou 'NUM', mas foi encontrado '"+token+"'")
-        sys.exit(-1)
 
 def parse():
     S() # simbolo nao-terminal inicial
