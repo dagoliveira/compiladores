@@ -152,3 +152,14 @@ SINAL: MAIS
 | NUM | `[0-9]+(.[0-9]+)?([Ee][+-]?{digitos})?` |
 
 Obs.: a vírgula não faz parte dos lexemas de OPERADOR\_RELACIONAL e OPERADOR\_MULTIPLICATIVO, mas apenas divide os lexemas que podem ser classificados como um token de cada tipo.
+
+## Operadores aritméticos, tipos e cast implícito
+
+Os operadores `and`, `mod` e `div` só podem operar sobre `integer`, embora o resultado da operação pode ser armazenado em variáveis do tipo `real` (cast implícito).
+
+Operações que misturam `integer` com `real` devem ter como resultado um `real`, esse resultado só pode ser armazenado em variáveis do tipo `real` não sendo permitido um cast implícito.
+
+Essas regras, a princípio, fazem com que o compilador tenha o mesmo comportamento que o Free Pascal Compiler. Dessa forma, é possível compilar códigos exemplos com o `fpc` e comparar os resultados com o compilador implementado.
+
+
+
