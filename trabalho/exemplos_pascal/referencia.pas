@@ -12,5 +12,5 @@ begin
     read(x);
     read(y);
     maior(x,y,r);
-    write(r);
+    write(r)
 end.
