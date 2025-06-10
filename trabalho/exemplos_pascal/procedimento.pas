@@ -9,5 +9,5 @@ end;
 begin
     read(x);
     read(y);
-    plus(x,y);
+    plus(x,y)
 end.
