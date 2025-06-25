@@ -5,8 +5,8 @@ begin
    read(a);
    if a > 0
    then
-       a := a + 5
+       b := a + 5
    else
-       a := a + 50;
-   write(a)
+       b := a + 50;
+   write(b)
 end.

@@ -1,5 +1,5 @@
-program funcao (input, output);
-var x,y,z,w: integer;
+program funcoes (input, output);
+var x,y,a,b,z,w: integer;
 function maior (a,b: integer): integer;
 begin
     if a >b then
@@ -17,8 +17,14 @@ end;
 begin
     read(x);
     read(y);
+    read(a);
+    read(b);
     z := maior(x,y);
-    write(z);
+    z := maior(z,a);
+    z := maior(z,b);
     w := menor(x,y);
-    write(w)
+    w := menor(w,a);
+    w := menor(w,b);
+    z := z + w;
+    write(z)
 end.

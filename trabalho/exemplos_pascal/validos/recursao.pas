@@ -1,5 +1,5 @@
-program exemplo_mdc (input, output);
-var x, y: integer;
+program recursao (input, output);
+var x, y, a: integer;
 function mdc (a,b: integer): integer;
 begin
     if b = 0 then mdc := a
@@ -8,5 +8,6 @@ end;
 
 begin
     read (x,y);
-    write ( mdc(x,y) )
+    a := mdc(x,y);
+    write ( a )
 end.
