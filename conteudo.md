@@ -5,7 +5,7 @@
 
 ## Prática - LLVM-IR
 
-- LLVM-IR
+- LLVM-IR [link](./llvm/README.md)
 - Primeiros esquemas de tradução
 - Expressões
 - while
