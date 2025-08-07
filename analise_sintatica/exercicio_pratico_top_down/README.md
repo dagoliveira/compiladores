@@ -63,7 +63,7 @@ Uma sugestão de sintaxe é iniciar a atribuição com uma palavra-chave, como `
 
 Modifique o parser para que o resultado da expressão seja calculado e impresso na tela, após analisar a linha entrada. Uma sugestão é alterar a main para que o parser seja chamado várias vezes, sendo possível entrar com várias linhas durante a execução do programa.
 
-Uma possível forma de implementar essa calculadora seria por meio da construção da árvore, que deve ser avaliada. Algo semelhante ao que foi feito em [Flex/Bison](../flex_bison/calculadora_ast). Porém, é possível resolver sem a construção de uma árvore sintática, mas pensando na notação pós-fixa.
+Uma possível forma de implementar essa calculadora seria por meio da construção da árvore, que deve ser avaliada. Algo semelhante ao que foi feito em [Flex/Bison](../../flex_bison/calculadora_ast). Porém, é possível resolver sem a construção de uma árvore sintática, mas pensando na notação pós-fixa.
 
 ### Solução
 
