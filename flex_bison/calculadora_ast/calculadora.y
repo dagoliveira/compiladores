@@ -31,7 +31,7 @@ CALC: /*empty*/
  ;
 
 EXP: FATOR
- | EXP MAIS EXP { $$ = newAST('+', 0, $1, $3); }
+ | EXP MAIS FATOR { $$ = newAST('+', 0, $1, $3); }
  | EXP MENOS FATOR { $$ = newAST('-', 0, $1, $3); }
  ;
 

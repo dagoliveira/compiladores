@@ -17,7 +17,7 @@ CALC: /* empty */
  ;
 
 EXP: FATOR
- | EXP MAIS EXP { $$ = $1 + $3; }
+ | EXP MAIS FATOR { $$ = $1 + $3; }
  | EXP MENOS FATOR { $$ = $1 - $3; }
  ;
 
