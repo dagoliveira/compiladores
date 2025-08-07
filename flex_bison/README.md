@@ -4,6 +4,24 @@
 
 O [primeiro exemplo](./wordcount) implementa algo similar a ferramenta *wc* do linux. O programa faz a leitura de texto da entrada padrão até que o fim de arquivo seja entrado (CTRL + d), e imprime a contagem de caracteres, palavras e linhas.
 
+## Padrões ambíguos (Apenas Flex)
+
+Lembrando que as regras para desambiguar padrões são as seguintes:
+
+- Fazer o casamento (match) com o padrão mais longo.
+- Caso ocorra empate, casar com o padrão que apareceu primeiro no programa.
+
+O seguinte [exemplo](./padroes_ambiguos) cria cinco padrões:
+1. "+"
+2. "="
+3. "+="
+4. "while"
+5. [a − zA − Z][a − zA − Z1 − 9]∗
+
+Verifique como += vai corretamente fazer o match com o padrão #3, que é mais longo que os padrões #1 e #2.
+
+Verifique também que a string "while" faz o match com o padrão #4 e não com o padrão #5, pois o #4 foi inserido antes no arquivo Flex.
+
 ## Calculadora (Flex + Bison)
 
 Dois exemplos integram Flex e Bison ao implementar uma calculadora simples. 
