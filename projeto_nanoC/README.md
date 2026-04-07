@@ -15,10 +15,10 @@ Nesta etapa, deverá ser implementado apenas uma tabela de símbolos. Use os arq
 A tabela de símbolos pode ser uma lista ligada normal, ou para melhor desempenho uma HASH. Ela deve conter pelo menos as informações de escopo, tipo (INT, FLOAT ou VOID), lexema (string com o nome da variável ou função) e qual o tipo de símbolo (variável, função, parâmetros formais, ...)
 
 O que deve ser feito:
-    - Controlar o escopo, onde o escopo global pode ser 0, e a cada novo escopo uma variável é incrementada. Ao sair do escopo a variável é decrementada.
-    - Cada variável declarada é inserida na tabela de símbolo
-    - Cada função declarada será inserida na tabela de símbolo, o escopo de funções será sempre o zero pois não temos funções aninhadas
-    - Ao sair de um escopo, as variáveis desse escopo podem/devem ser removidas da tabela.
+- Controlar o escopo, onde o escopo global pode ser 0, e a cada novo escopo uma variável é incrementada. Ao sair do escopo a variável é decrementada.
+- Cada variável declarada é inserida na tabela de símbolo
+- Cada função declarada será inserida na tabela de símbolo, o escopo de funções será sempre o zero pois não temos funções aninhadas
+- Ao sair de um escopo, as variáveis desse escopo podem/devem ser removidas da tabela.
 
 Como extra você já pode verificar, nos momentos em que um símbolo é usado, se o mesmo está na tabela de símbolos (já foi declarado) ou não. Caso não esteja na tabela, isso é um erro semântico e seu compilador deve informar o usuário (e a compilação deve falhar).
 
@@ -26,7 +26,7 @@ Como testar: Imprima a tabela de símbolos em certos momentos, como ao sair do e
 
 Um exemplo de solução simples está em [1_tabela_simbolos](./1_tabela_simbolos/).
 
-# Etapa 2 - Expressões simples usando apenas INT (ignorando argumentos em funções)
+## Etapa 2 - Expressões simples usando apenas INT (ignorando argumentos em funções)
 
 Nesta etapa, as expressões aritméticas devem ser implementadas (EXPRESSAO_SIMPLES). Não precisa implementar suporte a FLOAT, apenas INT. 
 
@@ -51,7 +51,7 @@ Como testar: Abra o arquivo LLVM gerado e verifique o código. Teste expressões
 
 Um exemplo de solução simples está em [2_expressoes_simples](./2_expressoes_simples/).
 
-# Etapa 3 - Acrescentando float e cast implícito
+## Etapa 3 - Acrescentando float e cast implícito
 
 Agora devemos considerar o tipo FLOAT, e não apenas o INT. Portanto, devemos fazer cast implícito. Na gramática usada, não há cast explícito.
 
@@ -61,7 +61,7 @@ O que considerar:
 
 Um exemplo de solução simples está em [3_float_cast](./3_float_cast/).
 
-# Etapa 4 - Chamadas de funções (com e sem argumentos)
+## Etapa 4 - Chamadas de funções (com e sem argumentos)
 
 Finalmente vamos implementar as chamadas de funções. Como já implementamos uma boa parte do nanoC, o corpo da função já está praticamente implementado.
 
@@ -72,7 +72,7 @@ O que considerar:
 
 Um exemplo de solução simples está em [4_funcoes](./4_funcoes/).
 
-# Etapa 5 - Repetição
+## Etapa 5 - Repetição
 
 Não temos if-else, mas precisamos implementar o WHILE. Outros tipos de repetição, ou seleção, não serão muito diferentes ou difíceis de implementar após entender o WHILE.
 
