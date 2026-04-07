@@ -1,16 +1,16 @@
 # Projeto NanoC
 
-Neste projeto será implementado um compilador simples. Vamos usar uma gramática simialr ao C, mas bem limitada.
+Neste projeto será implementado um compilador simples. Vamos usar uma gramática similar ao C, mas bem limitada.
 
-Não vamos gerar código para nenhuma arquitetura alvo, mas vamos usar a representação intermediária do LLVM (LLVM-IR). Essa representação intermediária poderá ser compilada, ou interpretada, para qualquer arquitetura alvo que está no backend do LLVM.
+Não vamos gerar código para nenhuma arquitetura alvo, mas vamos usar a representação intermediária do LLVM (LLVM-IR). Essa representação intermediária poderá ser compilada, ou interpretada, para qualquer arquitetura alvo que está no backend do LLVM. Portanto, para implementar/entender o presente projeto, primeiro deve conhecer a LLVM-IR.
 
 ## Arquivos Base
 
 Os arquivos base para iniciar o projeto estão na pasta [0_base](./0_base/).
 
-## Etapa 1 - Tabela de simbolos
+## Etapa 1 - Tabela de símbolos
 
-Nesta estapa, deverá ser implementado apenas uma tabela de símbolos. Use os arquivos base, e onde tiver ações sintáticas relacionadas a um símbolo (como declarações de variáveis, ou de funções) você deve inserir o símbolo numa tabela de símbolos.
+Nesta etapa, deverá ser implementado apenas uma tabela de símbolos. Use os arquivos base, e onde tiver ações sintáticas relacionadas a um símbolo (como declarações de variáveis, ou de funções) você deve inserir o símbolo numa tabela de símbolos.
 
 A tabela de símbolos pode ser uma lista ligada normal, ou para melhor desempenho uma HASH. Ela deve conter pelo menos as informações de escopo, tipo (INT, FLOAT ou VOID), lexema (string com o nome da variável ou função) e qual o tipo de símbolo (variável, função, parâmetros formais, ...)
 
@@ -28,12 +28,12 @@ Um exemplo de solução simples está em [1_tabela_simbolos](./1_tabela_simbolos
 
 # Etapa 2 - Expressões simples usando apenas INT (ignorando argumentos em funções)
 
-Nesta etapa, as expressções aritméticas devem ser implementadas (EXPRESSAO_SIMPLES). Não precisa implementar suporte a FLOAT, apenas INT. 
+Nesta etapa, as expressões aritméticas devem ser implementadas (EXPRESSAO_SIMPLES). Não precisa implementar suporte a FLOAT, apenas INT. 
 
-A passagem de parâmetros (chamada de função) também não deve ser implementada. Embora as expressões encontradas em uma chamada de funções serão, naturalmente, implementadas. Por exemplo, a chamada de funão `func( a + 2, 2 / 5)` possui duas expressões `a + 2` e `2 / 5` que serão traduzidas para LLVM.
+A passagem de parâmetros (chamada de função) também não deve ser implementada. Embora as expressões encontradas em uma chamada de funções serão, naturalmente, implementadas. Por exemplo, a chamada de função `func( a + 2, 2 / 5)` possui duas expressões `a + 2` e `2 / 5` que serão traduzidas para LLVM.
 
 Dificuldades:
-	- Como gerenciar as variáveis visto que LLVM é SSA, uma sugestão é deixar as variáveis em memória (alloca que usa a pilha). Sempre que acessar uma variável deve ser usado o load, e ao escrevere será usado um store.
+	- Como gerenciar as variáveis visto que LLVM é SSA, uma sugestão é deixar as variáveis em memória (alloca que usa a pilha). Sempre que acessar uma variável deve ser usado o load, e ao escrever será usado um store.
 	- Como e quando emitir as variáveis, tanto globais como locais.
 	- Definir, ou não, uma estrutura nova para gerenciar as expressões. Precisa gerenciar os tipos diferentes como registrador temporário, símbolo (variável) e literal (número).
 
@@ -51,7 +51,7 @@ Como testar: Abra o arquivo LLVM gerado e verifique o código. Teste expressões
 
 Um exemplo de solução simples está em [2_expressoes_simples](./2_expressoes_simples/).
 
-# Etapa 3 - Acrescentando float e cast implicito
+# Etapa 3 - Acrescentando float e cast implícito
 
 Agora devemos considerar o tipo FLOAT, e não apenas o INT. Portanto, devemos fazer cast implícito. Na gramática usada, não há cast explícito.
 
@@ -61,12 +61,12 @@ O que considerar:
 
 Um exemplo de solução simples está em [3_float_cast](./3_float_cast/).
 
-# Etapa 4 - Chamadas de funcoes (com e sem argumentos)
+# Etapa 4 - Chamadas de funções (com e sem argumentos)
 
 Finalmente vamos implementar as chamadas de funções. Como já implementamos uma boa parte do nanoC, o corpo da função já está praticamente implementado.
 
 O que considerar:
-    - definir/declarar a função com os argumentos, que serão registradores temporários; Consirando a restrição SSA, podemos copiar os registradores temporários para variáveis em memoria (stack), como na Etapa 2.
+    - definir/declarar a função com os argumentos, que serão registradores temporários; Considerando a restrição SSA, podemos copiar os registradores temporários para variáveis em memoria (stack), como na Etapa 2.
     - na chamada, devemos validar os parâmetros (quantidade e tipo)
     - Cuidado para parâmetro void, e.g. caso o usuário chame uma função VOID nos argumentos de outra função.
 
