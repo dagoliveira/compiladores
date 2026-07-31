@@ -12,7 +12,7 @@ O aluno deverá ser capaz de compreender as técnicas e módulos utilizados para
 - Introdução básica: [link](./aulas/introducao.pdf)
 - Exercício parser manual (lab): [link](./analise_sintatica/exercicio_pratico_top_down/)
 - SSA, fluxo de controle e otimizações (aula teórica)
-- LLVM-IR [link](./llvm/README.md) e MLIR (teórica e lab)
+- LLVM-IR [link](./aulas/llvm-ir/README.md) e MLIR (teórica e lab)
 - Tabela de símbolos e análise semântica (aula teórica)
 - Sistema de tipos (aula teórica)
 - ANTLR 4 + MLIR (lab para implementar um projeto de compilador)
@@ -25,6 +25,8 @@ O aluno deverá ser capaz de compreender as técnicas e módulos utilizados para
 - SLR(0)
 - SLR(1)
 - LR(1)
+
+[Folha de cola](./analise_sintatica/cheat_sheet_parser.pdf), e [lista de exercícios](./analise_sintatica/exercicios_parser.pdf).
 
 ## Bibliografia
 
