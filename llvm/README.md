@@ -8,3 +8,5 @@ Oo códigos do fatorial na forma recursiva e iterativa estão [aqui](./codigos/)
 
 
 Alguns vídeos mostrando como escrever e executar LLVM-IR estão disponíveis [nesta playlist do youtube](https://www.youtube.com/playlist?list=PLNH5D_GBXFJPc6u-LDsq4W3oMGxiL6N4k).
+
+Por fim, como usar `scanf` e `printf` é brevemente explicado [neste arquivo](./llvm_scanf_printf.md).
