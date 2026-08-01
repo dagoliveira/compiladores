@@ -9,4 +9,6 @@ Oo códigos do fatorial na forma recursiva e iterativa estão [aqui](./codigos/)
 
 Alguns vídeos mostrando como escrever e executar LLVM-IR estão disponíveis [nesta playlist do youtube](https://www.youtube.com/playlist?list=PLNH5D_GBXFJPc6u-LDsq4W3oMGxiL6N4k).
 
-Por fim, como usar `scanf` e `printf` é brevemente explicado [neste arquivo](./llvm-ir_scanf_printf.md).
+Como usar `scanf` e `printf` é brevemente explicado [neste arquivo](./llvm-ir_scanf_printf.md).
+
+Por fim, para usar a API em C++, e não ficar escrevendo código diretamente em LLVM-IR, veja [este tutorial](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html) publicado pela própria LLVM Foundation. O tutorial mostra como criar uma linguagem de programação simples, chamada Kaleidoscope. Veja especialmente o [Capítulo 3](https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl03.html).
