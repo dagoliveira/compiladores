@@ -31,7 +31,7 @@ O aluno deverá ser capaz de compreender as técnicas e módulos utilizados para
 ## Bibliografia
 
 ### Geral
-- Alfred V. Aho, S. Lam Monica, and D. Ullman Jeffrey. "Compilers principles, techniques & tools". Pearson Education, 2007. (Livro do dragão), [2 edição disponível no Internet Archive](https://archive.org/details/compiladores-principios-tec) e versão em português disponível na biblioteca.
+- Alfred V. Aho, S. Lam Monica, and D. Ullman Jeffrey. "Compilers principles, techniques & tools". Pearson Education, 2007. (Livro do dragão), [2 edição disponível no Internet Archive](https://archive.org/details/compiladores-principios-tecnicas-e-ferramentas) e versão em português disponível na biblioteca.
 - Andrew W. Appel. "Modern compiler implementation in ML." Cambridge University Press, 2004. (Livro do tigre), tem versão em C e Java.
 - Keith D. Cooper, and Linda Torczon. "Construindo Compiladores". Morgan Kaufmann, 2013.
 - Douglas Thain. "Introduction to Compilers and Language Design". Publicado de forma independente e disponível gratuitamente [aqui](https://dthain.github.io/books/compiler/).
