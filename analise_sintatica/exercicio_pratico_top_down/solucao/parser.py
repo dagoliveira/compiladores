@@ -25,17 +25,17 @@ def lookahead():
     lexema = entrada[0]
     if re.match("[0-9]+",lexema):
         return "NUM"
-    if re.match("\+",lexema):
+    if re.match(r"\+",lexema):
         return "MAIS"
     if re.match("-",lexema):
         return "MENOS"
-    if re.match("\*",lexema):
+    if re.match(r"\*",lexema):
         return "MULTIPLICA"
-    if re.match("\/",lexema):
+    if re.match(r"\/",lexema):
         return "DIVIDE"
-    if re.match("\(",lexema):
+    if re.match(r"\(",lexema):
         return "ABRE_PARENTESES"
-    if re.match("\)",lexema):
+    if re.match(r"\)",lexema):
         return "FECHA_PARENTESES"
     if re.match("let",lexema):
         return "LET"

@@ -23,13 +23,13 @@ def lookahead():
     lexema = entrada[0]
     if re.match("[0-9]+",lexema):
         return "NUM"
-    if re.match("\+",lexema):
+    if re.match(r"\+",lexema):
         return "MAIS"
-    if re.match("\*",lexema):
+    if re.match(r"\*",lexema):
         return "MULTIPLICA"
-    if re.match("\(",lexema):
+    if re.match(r"\(",lexema):
         return "ABRE_PARENTESES"
-    if re.match("\)",lexema):
+    if re.match(r"\)",lexema):
         return "FECHA_PARENTESES"
     if re.match("[a-zA-Z][a-zA-Z_0-9]*",lexema):
         return "ID"
