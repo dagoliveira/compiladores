@@ -26,7 +26,7 @@ header-includes:
 
 \footnotesize
 
-- Com a árvore gramatical feita, podemos percorre-la usando os *design patterns*:
+- Com a árvore gramatical feita, podemos percorrê-la usando os *design patterns*:
     - \footnotesize listener: usado para análises específicas e "pequenas", que verificam apenas parte da árvore; código pode ser executado ao entrar (entry) ou sair (exit) de um nó
     - \footnotesize visitor: usado para compilação e tarefas mais complicadas, podemos escolher a forma que a árvore é percorrida (pre, in, post, dfs, ...)
 
@@ -184,7 +184,7 @@ Entre com um input ('q' para sair): q
 
 # Exercício - decorando a árvore
 
-- Não vamos, extamente, decorá-la
+- Não vamos, exatamente, decorá-la
     - Porém, faremos algo com o mesmo efeito
 
 \vfill
@@ -211,27 +211,3 @@ mapa.put(ctx, res);
 int expr_valor = mapa.get(ctx->expr(0));
 ```
 
-
-<!--
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-![](./img/cover_Compiladores_Principios_Tecnicas_e_Ferramentas_2_ed.png){ height=50% }
-
-\footnotesize
-
-Compiladores: Principios, Tecnicas e Ferramentas (2 ed.)
-
-Caps. 8 e 9
-
-:::
-::: {.column width="50%"}
-![](./img/cover_Modern_Compiler_Implementation_in_ML.png){ height=50% }
-
-\footnotesize
-
-Modern Compiler Implementation in [ML|Java|C]
-
-Caps. 8, 10, 17, 18 e 19
-:::
-::::::::::::::
--->
