@@ -29,15 +29,16 @@ int main(int , const char **) {
 
         LabeledExprParser parser(&tokens);
 
-        // Clear default console logging listeners
+        // Remove o 'console logging listeners' padrão
         lexer.removeErrorListeners();
         parser.removeErrorListeners();
 
-        // Attach custom syntax error handler
+        // Coloca o nosso listener de erros para que possamos reportar os erros
         CatchSyntaxErrorListener el;
         lexer.addErrorListener(&el);
         parser.addErrorListener(&el);
 
+        // Iniciamos o parser com a regra 'prog', que eh a regra inicial
         tree::ParseTree* tree = parser.prog();
 
         if (el.hasErrors()){
